@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>CARTIGO Management System(Add Products)</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
+</head>
+<body>
+
+ </head>
+ <body background="images/background.jpg">
+  <br />
+  <div class="container">
+   <h2 align="center" style="font:100px; border: solid;">CARTIGO Management System <img src="images/logo.jpg" width="1000" height="100"></h2>
+   <br />
+
+     <div class="panel-heading" align="center" style="color: black;border: solid;background-color: grey"><label><b><U>ADD PRODUCTS</U></b></label></div>
+   
+   <div class="panel panel-default" >
+    <div class="panel-body" align="center">
+     <form method="POST" action="insert.php">
+      <?php echo $message; ?>
+           <div class="form-group" >
+       <label style="color: black; border:solid;background-color: grey"><b>S.No :</b></label>
+       <input type="value" name=S.No class="form-control" required , placeholder="ENTER S.No" />
+       </div>
+ 
+      <div class="form-group" >
+       <label style="color: black; border:solid;background-color: grey"><b>PRODUCT-NAME :</b></label>
+       <input type="text" name="PRODUCT-NAME" class="form-control" required , placeholder="ENTER PRODUCT-NAME" />
+       </div>
+       
+       <div class="form-group" >
+       <label style="color: black; border:solid;background-color: grey"><b>PRODUCT-PRICE :</b></label>
+       <input type="value" name="PRODUCT-PRICE" class="form-control" required placeholder="ENTER PRODUCT-PRICE" /></div>
+       
+       <div class="form-group" >
+       <label style="color: black; border:solid;background-color: grey"><b>WEIGHT :</b></label>
+       <input type="value" name="WEIGHT" class="form-control"  placeholder="ENTER WEIGHT" />
+       </div>
+              
+       <div class="form-group" >
+       <label style="color: black; border:solid;background-color: grey"><b>QUANTITY :</b></label>
+       <input type="value" name="QUANTITY" class="form-control" required placeholder="ENTER QUANTITY" />
+       </div>
+              
+       <div class="form-group" >
+       <label style="color: black; border:solid;background-color: grey"><b>RFID-TAG :</b></label>
+       <input type="value" name="RFID-TAG" class="form-control" required placeholder="ENTER RFID-TAG" />
+       </div>
+       <div class="form-group" >
+       <label style="color: black; border: solid;background-color: grey"><b>PRODUCT-ID :</b></label>
+       <input type="value" name="PRODUCT-ID" class="form-control" required placeholder="ENTER PRODUCT-ID" />
+       </div>
+
+       <div class="form-group" >
+       <label style="color: black; border:solid;background-color: grey"><b>PRODUCT-TYPE :</b></label>
+       <input type="value" name="PRODUCT-TYPE" class="form-control" required placeholder="ENTER PRODUCT-TYPE" />
+       </div>
+       
+       <div class="form-group" >
+       <label style="color: black; border:solid;background-color: grey"><b>PRODUCT-DESCRIPTION :</b></label>
+       <input type="value" name="PRODUCT-DESCRIPTION" class="form-control" required placeholder="ENTER PRODUCT-DESCRIPTION" />
+      </div>
+
+      	<hr>
+
+  <button type="submit" class="btn" name="save">Save:</button>
+  
+  <? php if(isset($_SESSION['msg'])) ?>
+  <div class="msg">
+    <? php 
+        echo $_SESSION['msg'];
+          unset($_SESSION['msg']);
+     ?>
+  </div>
+  <? php endif ?>
+<? php print("$output"); ?>
+
+</form>
+<hr>
+
+    </div>
+   </div>
+  </div>
+ </body>
+</body>
+</html> -->

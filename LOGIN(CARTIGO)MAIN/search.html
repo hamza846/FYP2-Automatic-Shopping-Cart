@@ -1,0 +1,66 @@
+<?php
+// include("conn_db.php");
+
+if(isset($_POST['search']))
+{
+    $valueToSearch = $_POST['valueToSearch'];
+    // search in all table columns
+    // using concat mysql function
+    $query = "SELECT * FROM `products` WHERE CONCAT(`PRODUCT_ID`, `PRODUCT_NAME`, `PRODUCT_PRICE`, `RFID_TAG`) LIKE '%".$valueToSearch."%'";
+    $search_result = filterTable($query);
+    
+}
+ else {
+    $query = "SELECT * FROM `products`";
+    $search_result = filterTable($query);
+}
+
+// function to connect and execute the query
+function filterTable($query)
+{
+    $connect = mysqli_connect("localhost", "root", "", "cartigo1");
+    $filter_Result = mysqli_query($connect, $query);
+    return $filter_Result;
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PHP HTML TABLE DATA SEARCH</title>
+        <style>
+            table,tr,th,td
+            {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <form action="" method="post">
+            <input type="text" name="valueToSearch" placeholder="Value To Search"><br><br>
+            <input type="submit" name="search" value="Filter"><br><br>
+            
+            <table>
+                <tr>
+                    <th>PRODUCT_ID</th>
+                    <th>PRODUCT_NAME</th>
+                    <th>PRODUCT_PRICE</th>
+                    <th>RFID_TAG</th>
+                </tr>
+
+      <!-- populate table from mysql database -->
+                <?php while($row = mysqli_fetch_array($search_result)):?>
+                <tr>
+                    <td><?php echo $row['PRODUCT_ID'];?></td>
+                    <td><?php echo $row['PRODUCT_NAME'];?></td>
+                    <td><?php echo $row['PRODUCT_PRICE'];?></td>
+                    <td><?php echo $row['RFID_TAG'];?></td>
+                </tr>
+                <?php endwhile;?>
+            </table>
+        </form>
+        
+    </body>
+</html>
